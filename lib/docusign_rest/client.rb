@@ -342,8 +342,8 @@ module DocusignRest
 
       signers.each_with_index do |signer, index|
         doc_signer = {
-          accessCode:                            '',
-          addAccessCodeToEmail:                  false,
+          accessCode:                            signer.fetch(:access_code, ''),
+          addAccessCodeToEmail:                  signer.fetch(:add_access_code_to_email, false),
           customFields:                          signer[:custom_fields],
           idCheckConfigurationName:              signer[:id_check_configuration_name],
           idCheckInformationInput:               nil,
