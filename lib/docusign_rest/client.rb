@@ -783,6 +783,7 @@ module DocusignRest
         customFields: options[:custom_fields]
       }
       post_hash[:enableWetSign] = options[:wet_sign] if options.has_key? :wet_sign
+      puts post_hash.inspect
       post_body = post_hash.to_json
 
       uri = build_uri("/accounts/#{acct_id}/envelopes")
