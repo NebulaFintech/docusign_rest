@@ -355,7 +355,9 @@ module DocusignRest
           requireSignOnPaper:                    signer[:require_sign_on_paper] || false,
           roleName:                              signer[:role_name],
           routingOrder:                          signer[:routing_order] || index + 1,
-          socialAuthentications:                 nil
+          socialAuthentications:                 nil,
+          embeddedRecipientStartURL:             signer.fetch(:embedded_recipient_start_url, nil),
+          smsAuthentication:                     signer.fetch(:sms_authentication, nil)
         }
 
         recipient_id = signer[:recipient_id] || index + 1
